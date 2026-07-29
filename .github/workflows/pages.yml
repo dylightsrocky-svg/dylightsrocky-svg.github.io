@@ -1,0 +1,36 @@
+name: Publish DY LIGHTS Website
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download website package
+        run: curl -fL "https://github.com/dylightsrocky-svg/dylightsrocky-svg.github.io/releases/download/site/dylights-site.zip" -o site.zip
+      - name: Extract website
+        run: mkdir site && unzip -q site.zip -d site
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
