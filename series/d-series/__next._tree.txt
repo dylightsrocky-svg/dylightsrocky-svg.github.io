@@ -1,0 +1,9 @@
+:HL["/_next/static/chunks/02u_i7h4o1ey_.css","style"]
+:HL["/products/d/d-60w.png","image"]
+:HL["/products/d/d-100w.png","image"]
+:HL["/products/d/d-150w.png","image"]
+:HL["/products/d/d-200w.png","image"]
+:HL["/products/d/d-250w.png","image"]
+:HL["/products/d/d-300w.png","image"]
+:HL["/products/d/d-400w.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"series","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"d-series","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wCZ-uU826rOHgpZkd_Ho3"}
