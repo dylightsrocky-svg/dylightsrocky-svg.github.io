@@ -699,4 +699,28 @@
       <image:caption>DY-700W-12V/24V-NR LED power supply product page from DY LIGHTS</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://ai.dylights.com/led-strips/240-led/project-quality/</loc>
+    <image:image>
+      <image:loc>https://ai.dylights.com/products/led-strips/240-led/project-quality.jpg</image:loc>
+      <image:title>DY LIGHTS Project Quality 240 LEDs per metre strip</image:title>
+      <image:caption>Customized 25W per metre SMD 2835 project strip with 3 oz copper PCB</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/led-strips/240-led/brand-quality/</loc>
+    <image:image>
+      <image:loc>https://ai.dylights.com/products/led-strips/240-led/brand-quality.jpg</image:loc>
+      <image:title>DY LIGHTS Brand Quality 240 LEDs per metre strip</image:title>
+      <image:caption>20W per metre SMD 2835 IP20 brand-quality strip with copper lead frame</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/led-strips/240-led/standard-quality/</loc>
+    <image:image>
+      <image:loc>https://ai.dylights.com/products/led-strips/240-led/standard-quality.jpg</image:loc>
+      <image:title>DY LIGHTS Standard Quality 240 LEDs per metre strip</image:title>
+      <image:caption>20W per metre SMD 2835 IP20 strip for cabinets, shelves and profiles</image:caption>
+    </image:image>
+  </url>
 </urlset>
