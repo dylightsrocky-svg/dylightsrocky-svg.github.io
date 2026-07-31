@@ -1,0 +1,18 @@
+.dy-mobile-nav{display:none}
+@media (max-width:780px){
+  html{scroll-padding-top:108px}
+  body{padding-top:104px!important}
+  .hero{padding-top:55px!important}
+  .nav-shell,.inner-header,.quote-nav,.detail-nav{display:none!important}
+  .dy-mobile-nav{display:block;position:fixed;inset:0 0 auto 0;z-index:9999;color:#17202a;background:#fffffff7;border-bottom:1px solid #dfe5ea;box-shadow:0 8px 28px #23303d1c;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+  .dy-mobile-top{height:58px;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .dy-mobile-brand{display:flex;align-items:center;gap:9px;min-width:0;color:#17202a;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:850;letter-spacing:.08em;line-height:1.15;text-decoration:none}
+  .dy-mobile-brand>span:last-child{white-space:nowrap}
+  .dy-mobile-brand small{display:block;margin-top:3px;color:#7a8490;font-size:5px;letter-spacing:.16em}
+  .dy-mobile-logo{display:grid;place-items:center;flex:0 0 43px;width:43px;height:34px;color:#fff;background:#f36f21;font-size:14px;font-weight:900;letter-spacing:-.04em;transform:skew(-6deg)}
+  .dy-mobile-quote{flex:0 0 auto;color:#fff!important;background:#f36f21;padding:10px 12px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:800;letter-spacing:.04em;text-decoration:none}
+  .dy-mobile-links{display:flex!important;gap:7px!important;height:46px;padding:6px 12px 9px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;color:#35404b!important;background:#f7f9fb;border-top:1px solid #e8edf1}
+  .dy-mobile-links::-webkit-scrollbar{display:none}
+  .dy-mobile-links a{flex:0 0 auto;display:flex;align-items:center;min-height:31px;padding:0 12px;color:#35404b!important;background:#fff;border:1px solid #dfe5ea;border-radius:999px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:750;letter-spacing:.02em;white-space:nowrap;text-decoration:none}
+  .dy-mobile-links a:last-child{color:#6f7882!important;background:#f3f5f7}
+}
