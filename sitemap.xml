@@ -385,4 +385,17 @@
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
+  <url><loc>https://ai.dylights.com/series/hk-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/mini-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/h-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/fl-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/rz-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/d-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/hp-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/mw-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/cl-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/at-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/tr-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/lc-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ai.dylights.com/series/nr-series</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
