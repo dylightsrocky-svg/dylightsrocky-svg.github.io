@@ -36,6 +36,7 @@
         if (recommendation) recommendation.textContent = choice.title;
         mainButton.href = choice.link;
         mainButton.innerHTML = choice.button + ' <b>↗</b>';
+        window.location.href = choice.link;
       }
 
       option.addEventListener('click', selectChoice);
