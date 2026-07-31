@@ -11,6 +11,7 @@
   .dy-mobile-brand small{display:block;margin-top:3px;color:#7a8490;font-size:5px;letter-spacing:.16em}
   .dy-mobile-logo{display:grid;place-items:center;flex:0 0 43px;width:43px;height:34px;color:#fff;background:#f36f21;font-size:14px;font-weight:900;letter-spacing:-.04em;transform:skew(-6deg)}
   .dy-mobile-quote{flex:0 0 auto;color:#fff!important;background:#f36f21;padding:10px 12px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:800;letter-spacing:.04em;text-decoration:none}
+  .dy-mobile-certs{flex:0 0 auto;color:#35404b!important;padding:9px 7px;font-family:Arial,Helvetica,sans-serif;font-size:8px;font-weight:800;text-decoration:none;white-space:nowrap}
   .dy-mobile-links{display:flex!important;gap:7px!important;height:46px;padding:6px 12px 9px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;color:#35404b!important;background:#f7f9fb;border-top:1px solid #e8edf1}
   .dy-mobile-links::-webkit-scrollbar{display:none}
   .dy-mobile-links a{flex:0 0 auto;display:flex;align-items:center;min-height:31px;padding:0 12px;color:#35404b!important;background:#fff;border:1px solid #dfe5ea;border-radius:999px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:750;letter-spacing:.02em;white-space:nowrap;text-decoration:none}

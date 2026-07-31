@@ -24,13 +24,13 @@
         '<span>DY LIGHTS × AI<small>INTELLIGENT POWER SOLUTIONS</small></span>' +
       '</a>' +
       '<a class="dy-mobile-quote" href="/quote/">Quotation</a>' +
+      '<a class="dy-mobile-certs" href="/certifications/">Certifications</a>' +
     '</div>' +
     '<nav class="dy-mobile-links" aria-label="Quick navigation">' +
       '<a href="/#products">Power Supplies</a>' +
       '<a href="/led-strips/">LED Strips</a>' +
       '<a href="/#contact">Contact</a>' +
       '<a href="/about/">About &amp; Factory</a>' +
-      '<a href="/certifications/">Certifications</a>' +
     '</nav>';
 
   document.body.insertBefore(nav, document.body.firstChild);

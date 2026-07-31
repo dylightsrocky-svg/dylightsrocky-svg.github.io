@@ -1,0 +1,9 @@
+#ai .finder-options span[role="button"]{cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease}
+#ai .finder-options span[role="button"]:hover{border-color:#ff6b22!important;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,34,.12)}
+#ai .finder-options span.is-selected{color:#d9510b!important;background:#fff0e8!important;border-color:#ff6b22!important;box-shadow:inset 4px 0 0 #ff6b22}
+@media (min-width:781px){
+  .nav-shell{gap:18px!important;padding-left:24px!important;padding-right:24px!important}
+  .nav-shell nav{display:flex!important;gap:18px!important;flex-wrap:nowrap!important}
+  .nav-shell nav a,.nav-shell .nav-cta{white-space:nowrap!important}
+  .nav-shell nav a{font-size:10px!important}
+}
