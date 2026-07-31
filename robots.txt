@@ -2,3 +2,4 @@ User-Agent: *
 Allow: /
 
 Sitemap: https://ai.dylights.com/sitemap.xml
+Sitemap: https://ai.dylights.com/image-sitemap.xml
