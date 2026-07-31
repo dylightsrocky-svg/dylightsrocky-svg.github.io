@@ -6,6 +6,19 @@
     'Dimmable': { title: 'Dimmable selected — D / TR / HK', link: '/series/d-series/', button: 'View dimmable solutions' }
   };
 
+  function choiceFromElement(element) {
+    if (!element) return null;
+    return choices[element.textContent.trim()] || null;
+  }
+
+  document.addEventListener('click', function (event) {
+    var option = event.target.closest && event.target.closest('#ai .finder-options span');
+    var choice = choiceFromElement(option);
+    if (!choice) return;
+    event.preventDefault();
+    window.location.assign(choice.link);
+  }, true);
+
   function initialiseFinder() {
     var section = document.querySelector('#ai');
     if (!section || section.dataset.finderReady === 'true') return;
