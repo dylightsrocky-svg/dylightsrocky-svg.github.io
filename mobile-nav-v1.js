@@ -7,10 +7,10 @@
 
   if (document.querySelector('.dy-mobile-nav')) return;
 
-  if (!document.querySelector('link[href="/mobile-nav-v1.css"]')) {
+  if (!document.querySelector('link[href^="/mobile-nav-v1.css"]')) {
     var stylesheet = document.createElement('link');
     stylesheet.rel = 'stylesheet';
-    stylesheet.href = '/mobile-nav-v1.css';
+    stylesheet.href = '/mobile-nav-v1.css?v=4';
     document.head.appendChild(stylesheet);
   }
 
