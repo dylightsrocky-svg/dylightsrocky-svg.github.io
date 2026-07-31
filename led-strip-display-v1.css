@@ -63,6 +63,32 @@
 
 .led-strip-detail .detail-photo > span { display: none; }
 
+.osram-featured {
+  margin: 0 3vw 110px;
+  padding: clamp(34px, 5vw, 76px);
+  border-radius: 30px;
+  color: #f8f3e8;
+  background:
+    radial-gradient(circle at 84% 10%, rgba(213, 168, 71, .22), transparent 30%),
+    linear-gradient(145deg, #0b0d10, #1b1d21 58%, #111316);
+  box-shadow: 0 30px 80px rgba(15, 18, 22, .18);
+}
+
+.osram-featured .section-heading { color: #fff; }
+.osram-featured .section-heading h2 { color: #fff; }
+.osram-featured .section-heading > p { color: #bfc3c8; }
+.osram-featured .eyebrow { color: #d9ad52; }
+.osram-featured .eyebrow span { background: #d9ad52; }
+.osram-featured .product-grid { align-items: stretch; }
+.osram-featured .product-card { background: #fdfcf9; border-color: rgba(217, 173, 82, .55); }
+.osram-featured .product-card:hover { border-color: #d9ad52; box-shadow: 0 18px 50px rgba(0,0,0,.28); }
+.osram-featured .card-top span { color: #8c6724; }
+.osram-featured .series-card-image { height: 470px; background: linear-gradient(145deg, #fff, #f3f1eb); }
+.osram-featured .series-inquiry { color: #8c6724; }
+.osram-premium-note { margin: 0 0 34px; color: #d9ad52; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
+.osram-detail .detail-category { color: #9a7228; }
+.osram-detail .detail-photo { border: 1px solid rgba(185, 140, 46, .35); }
+
 .strip-image-placeholder {
   width: 100%;
   height: 100%;
@@ -83,6 +109,7 @@
 .led-strip-detail .detail-photo .strip-image-placeholder { min-height: 650px; }
 
 @media (max-width: 900px) {
+  .osram-featured { margin: 0 20px 72px; }
   .strip-custom-banner { grid-template-columns: 1fr; margin: 0 20px 72px; gap: 28px; }
   .led-strip-card .series-card-image { height: 390px; }
   .led-strip-detail .detail-photo { min-height: 560px; }
@@ -90,6 +117,8 @@
 }
 
 @media (max-width: 560px) {
+  .osram-featured { padding: 34px 18px; }
+  .osram-featured .series-card-image { height: 430px; }
   .led-strip-card .series-card-image { height: 430px; padding: 12px; }
   .strip-custom-banner { padding: 36px 24px; }
   .led-strip-detail .detail-photo { min-height: 500px; padding: 10px; }
