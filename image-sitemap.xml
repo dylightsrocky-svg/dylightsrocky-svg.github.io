@@ -115,4 +115,76 @@
     <image:image><image:loc>https://ai.dylights.com/products/tr/tr-installation.jpg</image:loc></image:image>
     <image:image><image:loc>https://ai.dylights.com/products/tr/tr-interior.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-36w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/78631e9f-2fd1-4c09-a952-7110b1271727.jpg</image:loc>
+      <image:title>DY LIGHTS 36W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-36W-12-H and DY-36W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-60w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/565426d9-9d1b-4f45-a86b-5e05c4273cec.jpg</image:loc>
+      <image:title>DY LIGHTS 60W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-60W-12-H and DY-60W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-100w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/565426d9-9d1b-4f45-a86b-5e05c4273cec.jpg</image:loc>
+      <image:title>DY LIGHTS 100W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-100W-12-H and DY-100W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-150w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/eba94d61-0fb3-459b-8bbd-c957f6f1cac3.jpg</image:loc>
+      <image:title>DY LIGHTS 150W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-150W-12-H and DY-150W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-200w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/215f9db6-1d52-43d9-9f40-3e89af2e2c17.jpg</image:loc>
+      <image:title>DY LIGHTS 200W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-200W-12-H and DY-200W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-250w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/873a6978-ab1c-4b66-99fb-dc2d41152016.jpg</image:loc>
+      <image:title>DY LIGHTS 250W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-250W-12-H and DY-250W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-300w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/b937d72d-aafc-493e-9aee-7e6319becd54.jpg</image:loc>
+      <image:title>DY LIGHTS 300W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-300W-12-H and DY-300W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-400w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/5308b4da-1623-435e-bd6e-b19187fb83e8.jpg</image:loc>
+      <image:title>DY LIGHTS 400W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-400W-12-H and DY-400W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ai.dylights.com/products/dy-600w-12-24-h</loc>
+    <image:image>
+      <image:loc>https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/1f7ce634-23bd-412a-a61f-59783fb7d145.jpg</image:loc>
+      <image:title>DY LIGHTS 600W H Series IP67 Waterproof LED Power Supply</image:title>
+      <image:caption>DY-600W-12-H and DY-600W-24-H waterproof constant-voltage LED power supply</image:caption>
+    </image:image>
+  </url>
 </urlset>
