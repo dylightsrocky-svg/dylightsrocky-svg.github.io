@@ -10,7 +10,7 @@
   if (!document.querySelector('link[href^="/mobile-nav-v1.css"]')) {
     var stylesheet = document.createElement('link');
     stylesheet.rel = 'stylesheet';
-    stylesheet.href = '/mobile-nav-v1.css?v=4';
+    stylesheet.href = '/mobile-nav-v1.css?v=5';
     document.head.appendChild(stylesheet);
   }
 
@@ -41,4 +41,12 @@
   } else {
     initialiseMobileNavigation();
   }
+
+  [100, 500, 1500].forEach(function (delay) {
+    window.setTimeout(initialiseMobileNavigation, delay);
+  });
+
+  new MutationObserver(function () {
+    if (!document.querySelector('.dy-mobile-nav')) initialiseMobileNavigation();
+  }).observe(document.documentElement, { childList: true, subtree: true });
 })();
