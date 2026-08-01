@@ -10,9 +10,15 @@
     "/certifications": `<section class="trust-section" data-dy-trust="certifications"><div class="trust-heading"><div><span class="trust-kicker">RESPONSIBLE COMPLIANCE</span><h2>Documents matched<br>to the exact model.</h2></div><p>Certification marks should never be assumed to apply to every product. DY LIGHTS confirms the current certificate or report for the selected model and destination market before ordering.</p></div><div class="trust-grid"><article class="trust-card"><small>01 / MODEL</small><h3>Exact product check</h3><p>Tell us the complete model number, output voltage and wattage required.</p></article><article class="trust-card"><small>02 / MARKET</small><h3>Destination review</h3><p>Compliance requirements are checked against the customer’s intended sales or installation market.</p></article><article class="trust-card"><small>03 / FILES</small><h3>Current documentation</h3><p>Request the latest available certificate, report and datasheet instead of relying on an old file.</p></article><article class="trust-card"><small>04 / CONFIRMATION</small><h3>Before ordering</h3><p>Final documentation and product configuration should be confirmed with the DY LIGHTS sales team.</p></article></div><div class="trust-actions"><a href="mailto:topsales22@dylights.com">Request compliance files ↗</a><a href="/about">View company & factory</a></div></section>`
   };
   const addHeroQuality = () => {
-    if (path !== "/" || document.querySelector(".hero-quality-first")) return;
+    if (path !== "/") return;
     const heroProducts = document.querySelector(".hero-glow");
-    if (heroProducts) heroProducts.insertAdjacentHTML("beforeend", `<div class="hero-quality-first"><strong>QUALITY COMES FIRST.</strong><span>Engineered with care. Built to perform.</span></div>`);
+    if (!heroProducts) return;
+    if (!document.querySelector(".hero-quality-first")) {
+      heroProducts.insertAdjacentHTML("beforeend", `<div class="hero-quality-first"><strong>QUALITY COMES FIRST.</strong><span>Engineered with care. Built to perform.</span></div>`);
+    }
+    if (!document.querySelector(".hero-installation-photo")) {
+      heroProducts.insertAdjacentHTML("beforeend", `<div class="hero-installation-photo" role="img" aria-label="MINI power supply installed inside a junction box"></div>`);
+    }
   };
   const insert = () => {
     addHeroQuality();
