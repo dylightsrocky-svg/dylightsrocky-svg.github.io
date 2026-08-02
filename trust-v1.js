@@ -24,3 +24,10 @@
   insert();
   new MutationObserver(insert).observe(document.documentElement, {childList:true, subtree:true});
 })();
+
+if ((location.pathname.replace(/\/$/, "") || "/") === "/" && !document.querySelector('script[src^="/mini-carousel-v1.js"]')) {
+  const miniCarousel = document.createElement("script");
+  miniCarousel.src = "/mini-carousel-v1.js?v=1";
+  miniCarousel.defer = true;
+  document.head.appendChild(miniCarousel);
+}

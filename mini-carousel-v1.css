@@ -1,0 +1,78 @@
+/* DY LIGHTS MINI homepage spotlight — isolated from all sections below the hero. */
+.hero.dy-mini-hero{
+  min-height:720px;
+  height:auto;
+  max-height:none;
+  padding:135px 5vw 78px;
+  grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);
+  gap:4vw;
+  align-items:center;
+  background:linear-gradient(110deg,#fbf9f6 0,#f4f0ea 46%,#ebe5dc 100%);
+}
+.dy-mini-hero .hero-copy{grid-area:1/1;width:min(650px,100%);text-align:left;color:#171b21}
+.dy-mini-hero .hero-copy .eyebrow{justify-content:flex-start;color:#e9681a;font-weight:800}
+.dy-mini-hero .hero-copy h1{color:#171b21;font-size:clamp(54px,5vw,82px);line-height:.93;letter-spacing:-.045em;text-shadow:none}
+.dy-mini-hero .hero-copy h1 em{color:#171b21;font-family:inherit;font-style:normal}
+.dy-mini-hero .hero-text{max-width:590px;margin-inline:0;color:#59616b;font-size:17px}
+.dy-mini-hero .hero-actions{justify-content:flex-start}
+.dy-mini-hero .hero-features{display:grid;grid-template-columns:repeat(5,minmax(74px,1fr));gap:12px;margin:30px 0 32px;max-width:610px}
+.dy-mini-hero .hero-feature{padding:13px 7px 11px;text-align:center;border-top:1px solid #cfc8bf;color:#30363d}
+.dy-mini-hero .hero-feature b{display:block;font-size:13px;line-height:1.1}
+.dy-mini-hero .hero-feature span{display:block;margin-top:5px;color:#777e86;font-size:9px;font-weight:700;letter-spacing:.035em;line-height:1.25}
+
+.dy-mini-hero .hero-glow{
+  grid-area:1/2;
+  position:relative;
+  inset:auto;
+  top:auto;
+  left:auto;
+  width:100%;
+  height:min(535px,65vh);
+  min-height:470px;
+  transform:none;
+  overflow:hidden;
+  border:1px solid #ded7ce;
+  border-radius:26px;
+  background:url("/assets/mini-carousel/mini-room.jpg") center/cover no-repeat!important;
+  box-shadow:0 34px 85px #34271b25,inset 0 0 0 1px #ffffff91;
+}
+.dy-mini-hero .hero-glow:before{content:"NEW TECHNOLOGY · MINI SERIES";position:absolute;z-index:4;top:22px;left:24px;padding:10px 14px;color:#df6217;background:#ffffffe0;border:1px solid #e6dfd7;border-radius:999px;font-size:8px;font-weight:850;letter-spacing:.15em}
+.dy-mini-hero .hero-glow:after{content:"36W · 60W · 100W · 150W · 200W";position:absolute;z-index:4;right:22px;bottom:20px;padding:11px 14px;color:#fff;background:#171b21e8;border-radius:3px;font-size:8px;font-weight:850;letter-spacing:.12em}
+.dy-mini-carousel{position:absolute;z-index:3;inset:0;overflow:hidden;pointer-events:none}
+.dy-mini-carousel img{position:absolute;left:50%;bottom:18%;object-fit:contain;object-position:center bottom;transform:translateX(-50%);filter:drop-shadow(0 13px 9px #33251b42);animation:dy-product-glide .72s cubic-bezier(.16,1,.3,1) both}
+.dy-mini-carousel img[data-size="36"]{width:57%;max-height:48%}
+.dy-mini-carousel img[data-size="60"]{width:69%;max-height:52%}
+.dy-mini-carousel img[data-size="100"]{width:82%;max-height:56%}
+.dy-mini-carousel img[data-size="150"],.dy-mini-carousel img[data-size="200"]{width:96%;max-height:62%}
+.dy-mini-hero .hero-quality-first{top:auto;bottom:58px;width:72%}
+.dy-mini-hero .hero-quality-first strong{font-size:13px}
+.dy-mini-hero .hero-quality-first span{margin-top:4px;font-size:9px}
+
+@keyframes dy-product-glide{
+  from{transform:translateX(calc(-50% + 18px)) scale(.992);filter:drop-shadow(0 9px 7px #33251b29)}
+  to{transform:translateX(-50%) scale(1);filter:drop-shadow(0 13px 9px #33251b42)}
+}
+@media(prefers-reduced-motion:reduce){.dy-mini-carousel img{animation:none}}
+
+@media(max-width:900px){
+  .hero.dy-mini-hero{grid-template-columns:1fr;gap:38px;padding-top:130px}
+  .dy-mini-hero .hero-copy{grid-area:1/1;text-align:center;margin-inline:auto}
+  .dy-mini-hero .hero-copy .eyebrow,.dy-mini-hero .hero-actions{justify-content:center}
+  .dy-mini-hero .hero-text{margin-inline:auto}
+  .dy-mini-hero .hero-features{margin-inline:auto}
+  .dy-mini-hero .hero-glow{grid-area:2/1;width:min(780px,100%);height:500px;margin-inline:auto}
+}
+@media(max-width:600px){
+  .hero.dy-mini-hero{gap:30px;min-height:auto;padding:38px 20px 62px}
+  .dy-mini-hero .hero-copy h1{font-size:46px}
+  .dy-mini-hero .hero-text{font-size:14px}
+  .dy-mini-hero .hero-features{grid-template-columns:repeat(3,1fr);gap:7px;margin-top:22px}
+  .dy-mini-hero .hero-feature:nth-child(4),.dy-mini-hero .hero-feature:nth-child(5){display:none}
+  .dy-mini-hero .hero-glow{height:330px;min-height:330px;border-radius:18px}
+  .dy-mini-hero .hero-glow:before{top:12px;left:12px;padding:8px 10px;font-size:6px}
+  .dy-mini-hero .hero-glow:after{right:12px;bottom:12px;padding:8px 9px;font-size:6px}
+  .dy-mini-carousel img{bottom:21%}
+  .dy-mini-hero .hero-quality-first{bottom:43px}
+  .dy-mini-hero .hero-quality-first strong{font-size:10px}
+  .dy-mini-hero .hero-quality-first span{font-size:7px}
+}
