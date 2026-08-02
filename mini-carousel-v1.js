@@ -37,6 +37,7 @@
     const copy = hero?.querySelector(".hero-copy");
     const stage = hero?.querySelector(".hero-glow");
     if (!hero || !copy || !stage) return;
+    if (hero.classList.contains("dy-mini-hero") && stage.querySelector(".dy-mini-carousel") && document.querySelector(".dy-global-sellers")) return;
 
     hero.classList.add("dy-mini-hero");
     const eyebrow = copy.querySelector(".eyebrow");
