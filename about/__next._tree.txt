@@ -1,9 +1,0 @@
-:HL["/_next/static/chunks/02u_i7h4o1ey_.css","style"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/597c742d-8127-4dbf-b79b-64230b6262cc.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/1ea82a8b-09d7-46b3-8910-5a271b9ccbd4.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/91e84924-1993-44aa-be67-96b8ca25485a.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/c9eb73e3-ec2d-450e-8e1e-aafc6487ccd1.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/0f375cde-9565-4e8a-b6df-49e9bceedea2.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/e871da08-8d81-4af6-9827-8142cd221df8.jpg","image"]
-:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/90327b1b-bc00-4b34-81f0-c8cf4fdff1ef.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"about","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"wCZ-uU826rOHgpZkd_Ho3"}

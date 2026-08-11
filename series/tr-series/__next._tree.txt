@@ -1,6 +1,0 @@
-:HL["/_next/static/chunks/02u_i7h4o1ey_.css","style"]
-:HL["/products/tr/tr-60w.jpg","image"]
-:HL["/products/tr/tr-100w.jpg","image"]
-:HL["/products/tr/tr-150w.jpg","image"]
-:HL["/products/tr/tr-200w.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"series","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"tr-series","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wCZ-uU826rOHgpZkd_Ho3"}

@@ -112,10 +112,10 @@
 
   function inject(){
     const sellers=q(".sellers");
-    if(!sellers||q(".dyhl-highlights",sellers)) return false;
-    const grid=q(".seller-grid",sellers);
-    sellers.insertBefore(row,grid);
-    document.body.append(modal);
+    const grid=sellers&&q(".seller-grid",sellers);
+    if(!sellers||!grid) return false;
+    if(!q(".dyhl-highlights",sellers)) sellers.insertBefore(row,grid);
+    if(!modal.isConnected) document.body.append(modal);
     return true;
   }
 
@@ -230,8 +230,20 @@
     }
   });
 
-  if(!inject()){
-    const observer=new MutationObserver(()=>{if(inject()) observer.disconnect()});
-    observer.observe(document.documentElement,{childList:true,subtree:true});
-  }
+  let mountQueued=false;
+  const mount=()=>{
+    if(mountQueued) return;
+    mountQueued=true;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      mountQueued=false;
+      inject();
+    }));
+  };
+  if(document.readyState==="complete") mount();
+  else window.addEventListener("load",mount,{once:true});
+
+  const observer=new MutationObserver(()=>{
+    if(!q(".dyhl-highlights")||!modal.isConnected) mount();
+  });
+  observer.observe(document.documentElement,{childList:true,subtree:true});
 })();
