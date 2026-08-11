@@ -1,0 +1,6 @@
+:HL["/_next/static/chunks/02u_i7h4o1ey_.css","style"]
+:HL["https://omo-oss-image.thefastimg.com/portal-saas/new2022063020560879938/cms/image/215f9db6-1d52-43d9-9f40-3e89af2e2c17.jpg","image"]
+:HL["/products/hk/hk-60w.png","image"]
+:HL["/products/hk/hk-100w.png","image"]
+:HL["/products/hk/hk-200w.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"dy-200w-12-24-h","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wCZ-uU826rOHgpZkd_Ho3"}
