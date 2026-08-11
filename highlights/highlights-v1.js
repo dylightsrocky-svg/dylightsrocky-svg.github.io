@@ -1,54 +1,237 @@
 (()=>{
   "use strict";
-  const placeholder=(label,tone="#ee7000")=>`data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="${tone}"/><stop offset="1" stop-color="#171b21"/></linearGradient></defs><rect width="600" height="600" fill="url(#g)"/><path d="M0 450L600 190V600H0Z" fill="#fff" opacity=".08"/><circle cx="300" cy="250" r="108" fill="none" stroke="#fff" stroke-width="9" opacity=".74"/><text x="300" y="275" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="700" text-anchor="middle">${label.slice(0,2).toUpperCase()}</text></svg>`)}`;
+
   const highlights=[
-    {id:"company",title:"Company",cover:placeholder("Company"),stories:[
-      {eyebrow:"DY LIGHTS",title:"Engineering light. Powering trust.",copy:"A professional manufacturer focused on reliable LED power supplies and LED lighting solutions for global partners.",media:"/approved/hero-room-final.jpg"},
-      {eyebrow:"Our approach",title:"Built around long-term partnership.",copy:"Responsive service, honest specifications and practical engineering support from product selection to delivery.",media:"/approved/dy-lights-official.jpg",fit:"contain"}]},
-    {id:"factory",title:"Factory",cover:placeholder("Factory","#9a4c11"),stories:[
-      {eyebrow:"Manufacturing",title:"Quality controlled at the source.",copy:"From component selection and assembly to inspection, testing and shipment preparation.",media:"/approved/hero-room-final.jpg"},
-      {eyebrow:"Testing",title:"100% production testing.",copy:"Every stage is organized around stable performance, reliability and consistent factory standards.",media:"/series/rz.png",fit:"contain"}]},
-    {id:"showrooms",title:"Showrooms",cover:placeholder("Showrooms","#5d6670"),stories:[
-      {eyebrow:"DY LIGHTS showroom",title:"Solutions customers can see and compare.",copy:"A clear product presentation for new releases, demonstrations and technical discussions.",media:"/approved/hero-room-final.jpg"}]},
-    {id:"exhibitions",title:"Exhibitions",cover:placeholder("Exhibitions","#7a5a39"),stories:[
-      {eyebrow:"Global events",title:"Meeting lighting partners worldwide.",copy:"Product presentations, technical conversations and stronger relationships at international exhibitions.",media:"/approved/hero-room-final.jpg"}]},
-    {id:"customers",title:"Customers",cover:placeholder("Customers","#3f5566"),stories:[
-      {eyebrow:"Partnership",title:"Built for distributors and project professionals.",copy:"Long-term cooperation supported by dependable products, fast communication and practical service.",media:"/approved/hero-room-final.jpg"}]},
-    {id:"quality",title:"Quality",cover:placeholder("Quality","#4d5d3d"),stories:[
-      {eyebrow:"Quality comes first",title:"Engineered with care. Built to perform.",copy:"Production testing, inspection and reliability standards protect every DY LIGHTS project.",media:"/series/hp.png",fit:"contain"},
-      {eyebrow:"Professional protection",title:"Designed for demanding installations.",copy:"Stable output, dependable protection and manufacturing discipline across the DY LIGHTS range.",media:"/approved/rz-400w.png",fit:"contain"}]},
-    {id:"products",title:"Products",cover:placeholder("Products","#ee7000"),stories:[
-      {eyebrow:"DY LIGHTS power solutions",title:"Power for every lighting application.",copy:"Indoor, waterproof, compact and professional dimming solutions in one complete range.",media:"/approved/hero-room-final.jpg"},
-      {eyebrow:"HP Series",title:"Premium IP67 waterproof power.",copy:"Professional outdoor power from 100W to 1000W with a 5-year warranty.",media:"/approved/hp-400w.png",fit:"contain"},
-      {eyebrow:"HL7 Series",title:"New-generation indoor power.",copy:"60–500W, DC 12V / 24V and a 3-year warranty.",media:"/products/hl7/300W-24V-HL7.png",fit:"contain"},
-      {eyebrow:"AT Series",title:"Smart 2 in 1 power solution.",copy:"Automatic 12V / 24V detection for professional indoor lighting projects.",media:"/series/at.png",fit:"contain"},
-      {eyebrow:"MINI Series",title:"Mini size. Big performance.",copy:"Ultra-compact power engineered for modern lighting installations.",media:"/approved/mini-60w.png",fit:"contain"},
-      {eyebrow:"Dimming solutions",title:"Control built for professional projects.",copy:"Explore D, DALI and HK Series for flexible lighting control.",media:"/series/dali.png",fit:"contain"},
-      {eyebrow:"Explore the complete range",title:"Find the right DY LIGHTS solution.",copy:"Compare every series, wattage and application on the existing product page.",media:"/approved/hero-room-final.jpg",cta:{label:"EXPLORE ALL PRODUCTS",href:"#products"}}]}
+    {
+      id:"company",
+      title:"Company",
+      cover:"/highlights/media/company.jpg",
+      eyebrow:"DY LIGHTS · ENGINEERED POWER",
+      heading:"Built for lighting professionals.",
+      copy:"A focused LED power supply and lighting solutions company supporting partners with dependable engineering and responsive service.",
+      media:"/highlights/media/company.jpg"
+    },
+    {
+      id:"factory",
+      title:"Factory",
+      cover:"/media/dy-lights-factory-poster.jpg",
+      eyebrow:"REAL PRODUCTION BASE",
+      heading:"Made, tested and verified.",
+      copy:"See the production environment behind DY LIGHTS products—from assembly and inspection to testing and shipment preparation.",
+      media:"/media/dy-lights-factory.mp4",
+      poster:"/media/dy-lights-factory-poster.jpg",
+      type:"video",
+      duration:15000
+    },
+    {
+      id:"showrooms",
+      title:"Showrooms",
+      cover:"/highlights/media/showroom.jpg",
+      eyebrow:"DY LIGHTS SHOWROOMS",
+      heading:"Solutions customers can experience.",
+      copy:"A professional setting to compare power supplies, lighting products and application solutions in person.",
+      media:"/highlights/media/showroom.jpg"
+    },
+    {
+      id:"exhibitions",
+      title:"Exhibitions",
+      cover:"/highlights/media/messe-frankfurt.jpg",
+      eyebrow:"MESSE FRANKFURT",
+      heading:"Meeting lighting partners worldwide.",
+      copy:"DY LIGHTS connects with international customers through exhibitions, technical conversations and long-term cooperation.",
+      media:"/highlights/media/messe-frankfurt.jpg",
+      position:"50% 58%"
+    },
+    {
+      id:"products",
+      title:"Products",
+      cover:"/approved/hp-400w.png",
+      eyebrow:"DY LIGHTS POWER SOLUTIONS",
+      heading:"Power for every lighting application.",
+      copy:"Indoor, waterproof, compact and professional dimming solutions across the existing DY LIGHTS product range.",
+      media:"/approved/hp-400w.png",
+      fit:"contain",
+      cta:{label:"EXPLORE PRODUCTS",href:"#products"}
+    }
   ];
-  let groupIndex=0,storyIndex=0,timer=null,remaining=6000,startedAt=0,paused=false,opener=null,touchX=0,savedScrollY=0;
-  const q=(s,r=document)=>r.querySelector(s);
-  const make=(tag,cls,attrs={})=>{const el=document.createElement(tag);if(cls)el.className=cls;Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));return el};
+
+  const q=(selector,root=document)=>root.querySelector(selector);
+  const make=(tag,className,attributes={})=>{
+    const element=document.createElement(tag);
+    if(className) element.className=className;
+    Object.entries(attributes).forEach(([name,value])=>element.setAttribute(name,value));
+    return element;
+  };
+
+  let activeIndex=0;
+  let timer;
+  let opener;
+  let savedScrollY=0;
+  let touchX=0;
+
   const row=make("div","dyhl-highlights",{"aria-label":"DY LIGHTS Highlights"});
   const viewport=make("div","dyhl-highlights__viewport");
   const list=make("ul","dyhl-highlights__list");
-  highlights.forEach((item,index)=>{const li=make("li");const b=make("button","dyhl-highlights__button",{type:"button","aria-label":`Open ${item.title} Highlight`});const cover=make("span","dyhl-highlights__cover");const img=make("img","",{src:item.cover,alt:"",loading:"lazy",decoding:"async"});const label=make("span","dyhl-highlights__label");label.textContent=item.title;cover.append(img);b.append(cover,label);b.addEventListener("click",()=>open(index,b));li.append(b);list.append(li)});
-  viewport.append(list);row.append(viewport);
+
+  highlights.forEach((item,index)=>{
+    const listItem=make("li");
+    const button=make("button","dyhl-highlights__button",{type:"button","aria-label":`Open ${item.title} Highlight`});
+    const cover=make("span","dyhl-highlights__cover");
+    const image=make("img","",{src:item.cover,alt:"",loading:"lazy",decoding:"async"});
+    const initials=make("span","dyhl-highlights__initials");
+    const label=make("span","dyhl-highlights__label");
+    initials.textContent=item.title.slice(0,2).toUpperCase();
+    label.textContent=item.title;
+    cover.append(image,initials);
+    button.append(cover,label);
+    button.addEventListener("click",()=>open(index,button));
+    listItem.append(button);
+    list.append(listItem);
+  });
+
+  viewport.append(list);
+  row.append(viewport);
+
   const modal=make("div","dyhl-story",{hidden:"",role:"dialog","aria-modal":"true","aria-label":"DY LIGHTS Highlight viewer"});
-  modal.innerHTML=`<div class="dyhl-story__dialog"><div class="dyhl-story__media"></div><div class="dyhl-story__top"><div class="dyhl-story__progress"></div><div class="dyhl-story__meta"><span class="dyhl-story__meta-dot"></span><span></span></div></div><button class="dyhl-story__close" type="button" aria-label="Close Highlights">×</button><button class="dyhl-story__nav dyhl-story__nav--prev" type="button" aria-label="Previous story">‹</button><button class="dyhl-story__nav dyhl-story__nav--next" type="button" aria-label="Next story">›</button><div class="dyhl-story__content"><p class="dyhl-story__eyebrow"></p><h2 class="dyhl-story__title"></h2><p class="dyhl-story__copy"></p><a class="dyhl-story__cta" hidden></a></div></div>`;
-  function inject(){const sellers=q(".sellers");if(!sellers||q(".dyhl-highlights",sellers))return false;const grid=q(".seller-grid",sellers);sellers.insertBefore(row,grid);document.body.append(modal);return true}
-  function render(){const group=highlights[groupIndex],story=group.stories[storyIndex],box=q(".dyhl-story__media",modal);box.replaceChildren();box.style.background=story.background||"#171b21";let mediaDuration=duration();if(story.type==="video"){const video=make("video","",{src:story.media,muted:"",playsinline:"",preload:"metadata","aria-label":story.title});video.muted=true;video.playsInline=true;video.addEventListener("loadedmetadata",()=>{if(Number.isFinite(video.duration)){mediaDuration=Math.max(1500,video.duration*1000);resetProgress(mediaDuration);startTimer(mediaDuration)}video.play().catch(()=>{})},{once:true});video.addEventListener("ended",next,{once:true});box.append(video)}else if(story.media){const image=make("img","",{src:story.media,alt:story.title,decoding:"async",loading:"eager"});image.style.objectFit=story.fit||"cover";box.append(image)}q(".dyhl-story__meta span:last-child",modal).textContent=group.title;q(".dyhl-story__eyebrow",modal).textContent=story.eyebrow;q(".dyhl-story__title",modal).textContent=story.title;q(".dyhl-story__copy",modal).textContent=story.copy;const cta=q(".dyhl-story__cta",modal);if(story.cta){cta.hidden=false;cta.textContent=story.cta.label;cta.href=story.cta.href}else{cta.hidden=true;cta.removeAttribute("href")};resetProgress(mediaDuration);startTimer(mediaDuration)}
-  function resetProgress(ms){const group=highlights[groupIndex],progress=q(".dyhl-story__progress",modal);progress.replaceChildren(...group.stories.map((_,i)=>{const t=make("span",`dyhl-story__track${i<storyIndex?" is-complete":i===storyIndex?" is-active":""}`);t.style.setProperty("--dyhl-duration",`${ms}ms`);t.append(make("span","dyhl-story__fill"));return t}))}
-  function duration(){return matchMedia("(prefers-reduced-motion: reduce)").matches?10000:6000}
-  function startTimer(ms=duration()){clearTimeout(timer);remaining=ms;startedAt=Date.now();if(!paused)timer=setTimeout(next,ms)}
-  function pause(){if(paused)return;paused=true;remaining=Math.max(300,remaining-(Date.now()-startedAt));modal.classList.add("is-paused");clearTimeout(timer);const video=q("video",modal);if(video)video.pause()}
-  function resume(){if(!paused)return;paused=false;modal.classList.remove("is-paused");startTimer(remaining);const video=q("video",modal);if(video)video.play().catch(()=>{})}
-  function open(index,button){groupIndex=index;storyIndex=0;opener=button;savedScrollY=window.scrollY;document.body.style.position="fixed";document.body.style.top=`-${savedScrollY}px`;document.body.style.width="100%";modal.hidden=false;document.body.classList.add("dyhl-story-open");render();q(".dyhl-story__close",modal).focus()}
-  function close(){clearTimeout(timer);const video=q("video",modal);if(video)video.pause();modal.hidden=true;document.body.classList.remove("dyhl-story-open");document.body.style.position="";document.body.style.top="";document.body.style.width="";window.scrollTo(0,savedScrollY);paused=false;modal.classList.remove("is-paused");if(opener)opener.focus()}
-  function next(){const stories=highlights[groupIndex].stories;if(storyIndex<stories.length-1)storyIndex++;else{groupIndex=(groupIndex+1)%highlights.length;storyIndex=0}render()}
-  function prev(){if(storyIndex>0)storyIndex--;else{groupIndex=(groupIndex-1+highlights.length)%highlights.length;storyIndex=highlights[groupIndex].stories.length-1}render()}
-  q(".dyhl-story__close",modal).addEventListener("click",close);q(".dyhl-story__nav--prev",modal).addEventListener("click",prev);q(".dyhl-story__nav--next",modal).addEventListener("click",next);
-  modal.addEventListener("mouseenter",pause);modal.addEventListener("mouseleave",resume);modal.addEventListener("touchstart",e=>{touchX=e.changedTouches[0].clientX},{passive:true});modal.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)(dx<0?next:prev)()},{passive:true});
-  document.addEventListener("keydown",e=>{if(modal.hidden)return;if(e.key==="Escape")close();else if(e.key==="ArrowRight")next();else if(e.key==="ArrowLeft")prev();else if(e.key==="Tab"){const f=[...modal.querySelectorAll("button:not([hidden]),a:not([hidden])")];const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
-  if(!inject()){const observer=new MutationObserver(()=>{if(inject())observer.disconnect()});observer.observe(document.documentElement,{childList:true,subtree:true})}
+  modal.innerHTML=`
+    <div class="dyhl-story__dialog">
+      <div class="dyhl-story__media"></div>
+      <div class="dyhl-story__shade"></div>
+      <div class="dyhl-story__progress" aria-hidden="true"></div>
+      <div class="dyhl-story__meta"><span></span></div>
+      <button class="dyhl-story__close" type="button" aria-label="Close Highlights">×</button>
+      <button class="dyhl-story__nav dyhl-story__nav--prev" type="button" aria-label="Previous Highlight">‹</button>
+      <button class="dyhl-story__nav dyhl-story__nav--next" type="button" aria-label="Next Highlight">›</button>
+      <div class="dyhl-story__content">
+        <p class="dyhl-story__eyebrow"></p>
+        <h2 class="dyhl-story__title"></h2>
+        <p class="dyhl-story__copy"></p>
+        <a class="dyhl-story__cta" hidden></a>
+      </div>
+    </div>`;
+
+  function inject(){
+    const sellers=q(".sellers");
+    if(!sellers||q(".dyhl-highlights",sellers)) return false;
+    const grid=q(".seller-grid",sellers);
+    sellers.insertBefore(row,grid);
+    document.body.append(modal);
+    return true;
+  }
+
+  function render(){
+    clearTimeout(timer);
+    const item=highlights[activeIndex];
+    const mediaBox=q(".dyhl-story__media",modal);
+    mediaBox.replaceChildren();
+    mediaBox.classList.toggle("is-contained",item.fit==="contain");
+
+    if(item.type==="video"){
+      const video=make("video","",{src:item.media,poster:item.poster,muted:"",playsinline:"",preload:"metadata","aria-label":item.heading});
+      video.muted=true;
+      video.playsInline=true;
+      video.addEventListener("ended",next,{once:true});
+      mediaBox.append(video);
+      video.play().catch(()=>{});
+    }else{
+      const image=make("img","",{src:item.media,alt:item.heading,decoding:"async",loading:"eager"});
+      image.style.objectFit=item.fit||"cover";
+      image.style.objectPosition=item.position||"center";
+      mediaBox.append(image);
+    }
+
+    q(".dyhl-story__meta span",modal).textContent=item.title;
+    q(".dyhl-story__eyebrow",modal).textContent=item.eyebrow;
+    q(".dyhl-story__title",modal).textContent=item.heading;
+    q(".dyhl-story__copy",modal).textContent=item.copy;
+
+    const progress=q(".dyhl-story__progress",modal);
+    progress.replaceChildren(...highlights.map((_,index)=>{
+      const track=make("span",`dyhl-story__track${index<activeIndex?" is-complete":index===activeIndex?" is-active":""}`);
+      track.style.setProperty("--dyhl-duration",`${item.duration||8000}ms`);
+      track.append(make("span","dyhl-story__fill"));
+      return track;
+    }));
+
+    const cta=q(".dyhl-story__cta",modal);
+    if(item.cta){
+      cta.hidden=false;
+      cta.textContent=item.cta.label;
+      cta.href=item.cta.href;
+      cta.onclick=close;
+    }else{
+      cta.hidden=true;
+      cta.removeAttribute("href");
+      cta.onclick=null;
+    }
+
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      timer=setTimeout(next,item.duration||8000);
+    }
+  }
+
+  function open(index,button){
+    activeIndex=index;
+    opener=button;
+    savedScrollY=window.scrollY;
+    document.body.style.position="fixed";
+    document.body.style.top=`-${savedScrollY}px`;
+    document.body.style.width="100%";
+    document.body.classList.add("dyhl-story-open");
+    modal.hidden=false;
+    render();
+    q(".dyhl-story__close",modal).focus();
+  }
+
+  function close(){
+    clearTimeout(timer);
+    const video=q("video",modal);
+    if(video) video.pause();
+    modal.hidden=true;
+    document.body.classList.remove("dyhl-story-open");
+    document.body.style.position="";
+    document.body.style.top="";
+    document.body.style.width="";
+    window.scrollTo(0,savedScrollY);
+    if(opener) opener.focus();
+  }
+
+  function next(){
+    activeIndex=(activeIndex+1)%highlights.length;
+    render();
+  }
+
+  function prev(){
+    activeIndex=(activeIndex-1+highlights.length)%highlights.length;
+    render();
+  }
+
+  q(".dyhl-story__close",modal).addEventListener("click",close);
+  q(".dyhl-story__nav--prev",modal).addEventListener("click",prev);
+  q(".dyhl-story__nav--next",modal).addEventListener("click",next);
+  modal.addEventListener("click",event=>{if(event.target===modal) close()});
+  modal.addEventListener("touchstart",event=>{touchX=event.changedTouches[0].clientX},{passive:true});
+  modal.addEventListener("touchend",event=>{
+    const distance=event.changedTouches[0].clientX-touchX;
+    if(Math.abs(distance)>45) (distance<0?next:prev)();
+  },{passive:true});
+
+  document.addEventListener("keydown",event=>{
+    if(modal.hidden) return;
+    if(event.key==="Escape") close();
+    else if(event.key==="ArrowRight") next();
+    else if(event.key==="ArrowLeft") prev();
+    else if(event.key==="Tab"){
+      const focusable=[...modal.querySelectorAll("button:not([hidden]),a:not([hidden])")];
+      const first=focusable[0];
+      const last=focusable[focusable.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+    }
+  });
+
+  if(!inject()){
+    const observer=new MutationObserver(()=>{if(inject()) observer.disconnect()});
+    observer.observe(document.documentElement,{childList:true,subtree:true});
+  }
 })();
