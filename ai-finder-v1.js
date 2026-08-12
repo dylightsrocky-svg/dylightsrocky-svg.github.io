@@ -2,7 +2,7 @@
   var choices = {
     'Indoor IP20': { title: 'Indoor IP20 selected — HK / MINI / FL / RZ', link: '/series/hk-series/', button: 'View indoor IP20 solutions' },
     'Waterproof IP67': { title: 'Waterproof IP67 selected — HP / MW / H', link: '/series/hp-series/', button: 'View waterproof IP67 solutions' },
-    'Ultra-thin': { title: 'Ultra-thin selected — MINI / CL', link: '/series/mini-series/', button: 'View ultra-thin solutions' },
+    'Ultra-thin': { title: 'Ultra-thin selected — MINI', link: '/series/mini-series/', button: 'View ultra-thin solutions' },
     'Dimmable': { title: 'Dimmable selected — D / TR / HK', link: '/series/d-series/', button: 'View dimmable solutions' }
   };
 
