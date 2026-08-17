@@ -14,10 +14,15 @@
 
     const video = document.createElement("video");
     video.id = "dy-opening-video";
-    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4";
     video.autoplay = true;
+    video.muted = true;
+    video.defaultMuted = true;
     video.playsInline = true;
     video.preload = "auto";
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4?v=approved-4p5-autoplay";
 
     intro.appendChild(video);
     root.appendChild(intro);
@@ -36,13 +41,10 @@
 
     const playback = video.play();
     if (playback && typeof playback.catch === "function") {
-      playback.catch(() => {
-        video.muted = true;
-        video.play().catch(finish);
-      });
+      playback.catch(finish);
     }
 
-    window.setTimeout(finish, 6000);
+    window.setTimeout(finish, 5500);
   };
 
   start();
