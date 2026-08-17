@@ -33,6 +33,13 @@
 
     let finished = false;
     let retryTimer = 0;
+    let videoVisible = false;
+
+    const revealAdvancingVideo = () => {
+      if (finished || videoVisible || video.currentTime < 0.05) return;
+      videoVisible = true;
+      video.classList.add("dy-intro-video-playing");
+    };
 
     const finish = () => {
       if (finished) return;
@@ -55,6 +62,16 @@
 
     video.addEventListener("loadeddata", beginPlayback, { once: true });
     video.addEventListener("canplay", beginPlayback, { once: true });
+    video.addEventListener("timeupdate", revealAdvancingVideo);
+
+    if (typeof video.requestVideoFrameCallback === "function") {
+      const watchDecodedFrames = () => {
+        if (finished || videoVisible) return;
+        revealAdvancingVideo();
+        if (!videoVisible) video.requestVideoFrameCallback(watchDecodedFrames);
+      };
+      video.requestVideoFrameCallback(watchDecodedFrames);
+    }
 
     video.load();
     if (video.readyState >= 2) beginPlayback();

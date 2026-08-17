@@ -30,6 +30,11 @@ html.dy-intro-pending body > main {
   height: 100%;
   object-fit: cover;
   background-color: #02050a;
+  opacity: 0;
+}
+
+#dy-opening-intro video.dy-intro-video-playing {
+  opacity: 1;
 }
 
 html.dy-intro-active,
