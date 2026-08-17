@@ -1,29 +1,47 @@
 (() => {
-  const intro = document.getElementById("dy-opening-intro");
-  const video = document.getElementById("dy-opening-video");
+  const start = () => {
+    if (document.getElementById("dy-opening-intro")) return;
 
-  if (!intro || !video) return;
+    const intro = document.createElement("div");
+    intro.id = "dy-opening-intro";
+    intro.setAttribute("aria-label", "DY LIGHTS opening");
 
-  document.documentElement.classList.add("dy-intro-active");
+    const video = document.createElement("video");
+    video.id = "dy-opening-video";
+    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4";
+    video.autoplay = true;
+    video.playsInline = true;
+    video.preload = "auto";
 
-  let finished = false;
-  const finish = () => {
-    if (finished) return;
-    finished = true;
-    document.documentElement.classList.remove("dy-intro-active");
-    intro.remove();
+    intro.appendChild(video);
+    document.body.appendChild(intro);
+    document.documentElement.classList.add("dy-intro-active");
+
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      document.documentElement.classList.remove("dy-intro-active");
+      intro.remove();
+    };
+
+    video.addEventListener("ended", finish, { once: true });
+    video.addEventListener("error", finish, { once: true });
+
+    const playback = video.play();
+    if (playback && typeof playback.catch === "function") {
+      playback.catch(() => {
+        video.muted = true;
+        video.play().catch(finish);
+      });
+    }
+
+    window.setTimeout(finish, 6000);
   };
 
-  video.addEventListener("ended", finish, { once: true });
-  video.addEventListener("error", finish, { once: true });
-
-  const playback = video.play();
-  if (playback && typeof playback.catch === "function") {
-    playback.catch(() => {
-      video.muted = true;
-      video.play().catch(finish);
-    });
+  if (document.readyState === "complete") {
+    window.setTimeout(start, 0);
+  } else {
+    window.addEventListener("load", start, { once: true });
   }
-
-  window.setTimeout(finish, 6000);
 })();
