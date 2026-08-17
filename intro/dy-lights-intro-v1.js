@@ -1,5 +1,7 @@
 (() => {
   const root = document.documentElement;
+  const durationMs = 4500;
+  const poster = "/intro/dy-lights-approved-intro-poster.jpg?v=approved-poster-v1";
 
   const finishPendingState = () => {
     root.classList.remove("dy-intro-pending", "dy-intro-active");
@@ -19,49 +21,45 @@
     video.defaultMuted = true;
     video.playsInline = true;
     video.preload = "auto";
+    video.poster = poster;
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
-    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4?v=approved-4p5-loadfix";
+    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4?v=approved-4p5-posterfix";
 
     intro.appendChild(video);
     root.appendChild(intro);
     root.classList.add("dy-intro-active");
 
     let finished = false;
-    let started = false;
+    let retryTimer = 0;
 
     const finish = () => {
       if (finished) return;
       finished = true;
+      window.clearTimeout(retryTimer);
+      video.pause();
       finishPendingState();
       intro.remove();
     };
 
     const beginPlayback = () => {
-      if (finished || started) return;
-      started = true;
+      if (finished) return;
       const playback = video.play();
       if (playback && typeof playback.catch === "function") {
         playback.catch(() => {
-          started = false;
-          window.setTimeout(beginPlayback, 100);
+          if (!finished) retryTimer = window.setTimeout(beginPlayback, 100);
         });
       }
     };
 
     video.addEventListener("loadeddata", beginPlayback, { once: true });
     video.addEventListener("canplay", beginPlayback, { once: true });
-    video.addEventListener("ended", finish, { once: true });
-    video.addEventListener("error", finish, { once: true });
 
     video.load();
     if (video.readyState >= 2) beginPlayback();
 
-    window.setTimeout(() => {
-      if (!started && video.readyState < 2) finish();
-    }, 3500);
-    window.setTimeout(finish, 7000);
+    window.setTimeout(finish, durationMs);
   };
 
   start();

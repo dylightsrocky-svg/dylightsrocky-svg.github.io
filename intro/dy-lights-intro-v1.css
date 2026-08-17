@@ -2,7 +2,11 @@ html.dy-intro-pending,
 html.dy-intro-pending body {
   margin: 0;
   overflow: hidden !important;
-  background: #02050a;
+  background-color: #02050a;
+  background-image: url("/intro/dy-lights-approved-intro-poster.jpg?v=approved-poster-v1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 html.dy-intro-pending body > main {
@@ -17,7 +21,7 @@ html.dy-intro-pending body > main {
   place-items: center;
   visibility: visible;
   overflow: hidden;
-  background: #02050a;
+  background: #02050a url("/intro/dy-lights-approved-intro-poster.jpg?v=approved-poster-v1") center / cover no-repeat;
 }
 
 #dy-opening-intro video {
@@ -25,7 +29,7 @@ html.dy-intro-pending body > main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #02050a;
+  background-color: #02050a;
 }
 
 html.dy-intro-active,
@@ -34,6 +38,12 @@ html.dy-intro-active body {
 }
 
 @media (max-aspect-ratio: 16/9) {
+  html.dy-intro-pending,
+  html.dy-intro-pending body,
+  #dy-opening-intro {
+    background-size: contain;
+  }
+
   #dy-opening-intro video {
     object-fit: contain;
   }
