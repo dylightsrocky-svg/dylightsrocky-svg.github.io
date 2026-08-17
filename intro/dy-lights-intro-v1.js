@@ -1,4 +1,10 @@
 (() => {
+  const root = document.documentElement;
+
+  const finishPendingState = () => {
+    root.classList.remove("dy-intro-pending", "dy-intro-active");
+  };
+
   const start = () => {
     if (document.getElementById("dy-opening-intro")) return;
 
@@ -14,14 +20,14 @@
     video.preload = "auto";
 
     intro.appendChild(video);
-    document.body.appendChild(intro);
-    document.documentElement.classList.add("dy-intro-active");
+    root.appendChild(intro);
+    root.classList.add("dy-intro-active");
 
     let finished = false;
     const finish = () => {
       if (finished) return;
       finished = true;
-      document.documentElement.classList.remove("dy-intro-active");
+      finishPendingState();
       intro.remove();
     };
 
@@ -39,13 +45,5 @@
     window.setTimeout(finish, 6000);
   };
 
-  const startAfterHydration = () => {
-    window.setTimeout(start, 750);
-  };
-
-  if (document.readyState === "complete") {
-    startAfterHydration();
-  } else {
-    window.addEventListener("load", startAfterHydration, { once: true });
-  }
+  start();
 })();
