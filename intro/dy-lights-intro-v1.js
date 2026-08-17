@@ -39,9 +39,13 @@
     window.setTimeout(finish, 6000);
   };
 
+  const startAfterHydration = () => {
+    window.setTimeout(start, 750);
+  };
+
   if (document.readyState === "complete") {
-    window.setTimeout(start, 0);
+    startAfterHydration();
   } else {
-    window.addEventListener("load", start, { once: true });
+    window.addEventListener("load", startAfterHydration, { once: true });
   }
 })();
