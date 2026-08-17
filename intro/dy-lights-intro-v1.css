@@ -1,0 +1,28 @@
+#dy-opening-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #02050a;
+}
+
+#dy-opening-intro video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #02050a;
+}
+
+html.dy-intro-active,
+html.dy-intro-active body {
+  overflow: hidden !important;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #dy-opening-intro video {
+    object-fit: contain;
+  }
+}
