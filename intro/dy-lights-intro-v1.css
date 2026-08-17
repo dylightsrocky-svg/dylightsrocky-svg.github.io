@@ -1,9 +1,21 @@
+html.dy-intro-pending,
+html.dy-intro-pending body {
+  margin: 0;
+  overflow: hidden !important;
+  background: #02050a;
+}
+
+html.dy-intro-pending body > main {
+  visibility: hidden !important;
+}
+
 #dy-opening-intro {
   position: fixed;
   inset: 0;
   z-index: 2147483647;
   display: grid;
   place-items: center;
+  visibility: visible;
   overflow: hidden;
   background: #02050a;
 }
