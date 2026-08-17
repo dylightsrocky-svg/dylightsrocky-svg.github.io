@@ -22,13 +22,15 @@
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
-    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4?v=approved-4p5-autoplay";
+    video.src = "/intro/DY-LIGHTS-final-opening-preview.mp4?v=approved-4p5-loadfix";
 
     intro.appendChild(video);
     root.appendChild(intro);
     root.classList.add("dy-intro-active");
 
     let finished = false;
+    let started = false;
+
     const finish = () => {
       if (finished) return;
       finished = true;
@@ -36,15 +38,30 @@
       intro.remove();
     };
 
+    const beginPlayback = () => {
+      if (finished || started) return;
+      started = true;
+      const playback = video.play();
+      if (playback && typeof playback.catch === "function") {
+        playback.catch(() => {
+          started = false;
+          window.setTimeout(beginPlayback, 100);
+        });
+      }
+    };
+
+    video.addEventListener("loadeddata", beginPlayback, { once: true });
+    video.addEventListener("canplay", beginPlayback, { once: true });
     video.addEventListener("ended", finish, { once: true });
     video.addEventListener("error", finish, { once: true });
 
-    const playback = video.play();
-    if (playback && typeof playback.catch === "function") {
-      playback.catch(finish);
-    }
+    video.load();
+    if (video.readyState >= 2) beginPlayback();
 
-    window.setTimeout(finish, 5500);
+    window.setTimeout(() => {
+      if (!started && video.readyState < 2) finish();
+    }, 3500);
+    window.setTimeout(finish, 7000);
   };
 
   start();
